@@ -8,6 +8,8 @@ import java.util.List;
 import log.DLTLog;
 
 public class DLTParser {
+    private static final byte[][] START_LOGS = {{0x44, 0x4C, 0x54, 0x01},{0x44, 0x4C, 0x54, 0x02}};
+
     private List<DLTLog> parseDLT(String filePath) {
         List<DLTLog> dltLogs = new ArrayList<>();
         try (FileInputStream fis = new FileInputStream(filePath);
